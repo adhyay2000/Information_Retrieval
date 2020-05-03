@@ -1,0 +1,105 @@
+Name:ADITYA UPADHYAY
+Student ID: 2017A7PS0083P
+BITS Email: f20170083@pilani.bits-pilani.ac.in	
+Wikipedia file used: AO/wiki_06
+
+Please note that to create plot of the given data, only english words are taken into account. Moreover, to reduce the time of plotting about top 500 n-grams for each category are taken.
+
+Answer 1: 
+a) The total unique unigrams present are 68818 but only top 603(frequency-wise) unigram are taken for plotting due to h/w constraint. 
+b) The distribution plot is available in image_1.png
+c) 11349 unigrams are required to cover the 90% corpus.
+
+Answer 2:
+a) The total unique bigrams present are 476429 but only top 620(frequency-wise) bigram are taken for plotting due to h/w constraint. 
+b) The distribution plot is available in image_2.png
+c) 248227 bigrams are required to cover the 80% corpus.
+
+Answer 3:
+a) The total unique trigrams present are 1141013 but only top 535(frequency-wise) trigram are taken for plotting due to h/w constraint. 
+b) The distribution plot is available in image_3.png
+c) 499684 trigrams are required to cover the 70% corpus.
+
+Answer 4:
+a) Unigram analysis after stemming
+  i) Present: 54092 Taken for plotting: 737
+  ii) The distribution plot is available in image_4.png
+  iii) 6270 unigrams required to cover the 90% of corpus.
+
+b) Bigram analysis after stemming
+  i) Present: 436707 Taken for plotting: 707
+  ii) The distribution plot is available in image_5.png
+  iii) 208505 bigrams required to cover the 80% of corpus.
+
+c) Trigram analysis after stemming
+  i) Present: 1141013 Taken for plotting: 569
+  ii) The distribution plot is available in image_6.png
+  iii) 484037 trigrams required to cover the 70% of corpus.
+
+ANSWER 5:
+a) Unigram analysis after lemmatization
+  i) Present: 63305 Taken for plotting: 657
+  ii) The distribution plot is available in image_7.png
+  iii) 9114 unigrams required to cover the 90% of corpus.
+
+b) Bigram analysis after lemmatization
+  i) Present: 456383 Taken for plotting: 664
+  ii) The distribution plot is available in image_8.png
+  iii) 228181 bigrams required to cover the 80% of corpus.
+
+c) Trigram analysis after lemmatization
+  i) Present: 1141013 Taken for plotting: 535
+  ii) The distribution plot is available in image_9.png
+  iii) 491258 trigrams required to cover the 70% of corpus.
+
+ANSWER 6:
+Your brief summarization of the above result and how they are related to the zipf's law.
+The frequency distribution obtained in the above figure represents the case where the frequency of the ith most occuring token is proportional to the 1/i which is in accordance with the Zipf’s law as the graph approximately follows equations:
+	-> log10(x)+log10(y) = constant
+	-> log10(x*y) = constant
+	-> (x*y) = constant
+	-> y = 1/x 
+
+
+ANSWER 7:
+Examples where you observe that tokenization is not correct and why it is not correct?
+Note: It is possible to include any unicode character in .txt files: cliché, ω, 😀.
+"I've" is splitted into I , 've
+"the hold-him-back-and-drag-him-away maneuver" is splitted into ['the', 'hold-him-back-and-drag-him-away', 'maneuver'] which would be better if splitted ignoring the '-' character.
+"hungarianhousenyc@gmail.com" is splitted into hungarianhousenyc , @ , gmail.com
+
+These kind of tokenization is wrong because when search given words is done (e.g hungarianhousenyc@gmail.com), IR system may retrieve the documents corresponding to the tokenized words(hungarianhousenyc , @ , gmail.com) which may also give documents where let's say only hungarianhousenyc is present.
+
+ANSWER 8:
+Python NLTK is used to process input in this code. It uses improved TreebankWordTokenizer algorithm.
+In this algorithm, most punctuation is split from adjoining words and treated as different tokens. Verb contractions and Anglo-Saxon genetive of nouns are split into their component morphemes, and each morpheme is tagged seperately. It uses regular expressions to tokenize text as in case of Penn Treebank.
+ 
+
+Answer 9:
+This algorithm tokenize the strings like “30$ worth” into ['30', '$', 'worth'] thereby seprating the ‘30’ from ‘$’.Also, it splits the string like “24th January 2020” into ['24th', 'January', '2020']. "120% fee hike" is splitted into ['120', '%', 'fee', 'hike'].
+However strings like "12/feb/2010" is tokenized to ['12/feb/2010'] that is different from above even though both are different date format.
+string like "C#" is splitted to ['C','#'] but the string "C++" is kept intact while tokenization.
+Overall, such kind of splitting loses the semantic context of the phrase. 
+
+Answer 10:
+The top 20 bi-grams obtained using the Chi-square test.
+('carmina', 'villarroel')
+('kazushi', 'hano')
+('fiamme', 'gialle')
+('spontan', 'slelfburning')
+('boatin', 'campground')
+('stallburg', 'archducal')
+('kessel', 'coryn')
+('methylcytosine', 'dioxygenase')
+('masakatsu', 'hikosaka')
+('renuka', 'bhalerao')
+('nagesh', 'mone')
+('swisscomtv', 'sunrisetv')
+('sunrisetv', 'vtx')
+('esh', 'suisses')
+('fabien', 'lolita')
+('lolita', 'aubry')
+('yoshitaka', 'tokunaga')
+('zenobia', 'revertera')
+('salandra', 'aurelia')
+('francesca', 'pinelli')
